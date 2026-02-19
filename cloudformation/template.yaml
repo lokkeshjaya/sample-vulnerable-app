@@ -7,8 +7,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: sample-app-bucket-12345
-      # Fixed Issue 1: Removed public read ACL for security
-      AccessControl: Private                 # Changed from PublicRead to Private to prevent public access
+      AccessControl: Private                 # Fixed Issue 1: Changed from PublicRead to Private for security
       # Added cross-region replication configuration for improved data durability and availability
       ReplicationConfiguration:
         Role: !GetAtt ReplicationRole.Arn
