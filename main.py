@@ -32,7 +32,7 @@ def run_shell(command):
 
 def deserialize_blob(blob):
     # Using ast.literal_eval for safe deserialization of basic Python literals
-    # This only allows basic data types like strings, numbers, tuples, lists, dicts
+    # This only allows simple data types like strings, numbers, tuples, lists, dicts, booleans, and None
     try:
         return ast.literal_eval(blob.decode() if isinstance(blob, bytes) else blob)
     except (ValueError, SyntaxError):
